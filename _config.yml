@@ -1,1 +1,18 @@
 theme: jekyll-theme-hacker
+show_downloads: true
+
+title: demo - rzning.com
+description: Some online sample
+author: Rzning
+email: rzning@outlook.com
+github_username: rzning
+
+encoding: utf-8
+timezone: Asia/Shanghai
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - .sass-cache
+  - README.md
+  - CNAME
