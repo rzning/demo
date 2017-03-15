@@ -1,0 +1,10 @@
+---
+layout: home
+---
+
+<h2>Some online sample</h2>
+<p>我的一些在线示例。</p>
+
+{% for demo in site.samples %}
+  <p><a href="{{ demo.url | replace:'index','' }}">{{ demo.title }}</a></p>
+{% endfor %}
