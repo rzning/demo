@@ -1,0 +1,25 @@
+---
+layout: demo
+title: monaco-editor Sync Loading Sample
+cdn_styles:
+- https://microsoft.github.io/monaco-editor/node_modules/monaco-editor/min/vs/editor/editor.main.css
+cdn_script:
+- https://microsoft.github.io/monaco-editor/node_modules/monaco-editor/min/vs/loader.js
+- https://microsoft.github.io/monaco-editor/node_modules/monaco-editor/min/vs/editor/editor.main.nls.js
+- https://microsoft.github.io/monaco-editor/node_modules/monaco-editor/min/vs/editor/editor.main.js
+local_styles:
+- ../css/main.css
+local_script:
+- main.js
+---
+  <h2>Monaco Editor Sync Loading Sample</h2>
+  <div id="container"></div>
+  <script>
+    var require = { paths: { 'vs': 'https://microsoft.github.io/monaco-editor/node_modules/monaco-editor/min/vs' } };
+    // 使用代理实现 Web Worker 跨域请求。
+    window.MonacoEnvironment = {
+        getWorkerUrl: function(workerId, label) {
+            return '../js/monaco-editor-worker-loader-proxy.js';
+        }
+    }
+  </script>

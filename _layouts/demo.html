@@ -7,6 +7,8 @@
   <title>{{ page.title | default:"demo"}}</title>
   {% for style in page.cdn_styles %}
   <link rel="stylesheet" href="{{ style }}"/>{% endfor %}
+  {% for style in page.local_styles %}
+  <link rel="stylesheet" href="{{ style }}"/>{% endfor %}
 </head>
 <body>
 {{ content }}
