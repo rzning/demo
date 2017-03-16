@@ -2,16 +2,21 @@
 layout: demo
 title: monaco-editor
 cdn_script:
-# - /libs/monaco-editor/min/vs/loader.js
-- https://microsoft.github.io/monaco-editor/node_modules/monaco-editor/min/vs/loader.js
+  # - /libs/monaco-editor/min/vs/loader.js
+  - https://microsoft.github.io/monaco-editor/node_modules/monaco-editor/min/vs/loader.js
 local_styles:
-- css/main.css
+  - css/main.css
 local_script:
-- js/editor.js
-- js/iframe.js
+  - js/editor.js
+  - js/iframe.js
+  - js/models.js
 ---
   <h2>Monaco Editor Sample</h2>
-  <div id="container"></div>
+  <div class="container" id="container"></div>
 
   <h2>Editor in tiny iframe</h2>
-  <div id="iframe-container"></div>
+  <div class="container" id="iframe-container"></div>
+
+  <h2>Shared Models Sample</h2>
+  <div class="container shared" id="share-container1"></div>
+  <div class="container shared" id="share-container2"></div>
