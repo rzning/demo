@@ -9,7 +9,8 @@ local_styles:
 local_script:
   - js/editor.js
   - js/iframe.js
-  - js/models.js
+  - js/shared-sample.js
+  - js/colorize-editor.js
 ---
   <h2>Monaco Editor Sample</h2>
   <div class="container" id="container"></div>
@@ -20,3 +21,22 @@ local_script:
   <h2>Shared Models Sample</h2>
   <div class="container shared" id="share-container1"></div>
   <div class="container shared" id="share-container2"></div>
+
+  <h2>Syntax Colorization</h2>
+  <div class="colorize-box">
+    <div class="toolbar">
+      <div class="language-bar">
+        <label>Language</label>
+        <select class="language-picker"></select>
+      </div>
+      <div class="theme-bar">
+        <label>Theme</label>
+        <select class="theme-picker">
+          <option>Visual Studio</option>
+          <option>Visual Studio Dark</option>
+          <option>High Contrast Dark</option>
+        </select>
+      </div>
+    </div>
+    <div class="container" id="colorize-editor"></div>
+  </div>

@@ -24,3 +24,30 @@ body {
         width: 45%;
     }
 }
+
+
+.alert.alert-error {
+    padding: 10px;
+    color: red;
+}
+
+.toolbar {
+    position: relative;
+    width: 96%;
+    max-width: 600px;
+}
+.language-bar, .theme-bar {
+    display: inline-block;
+}
+
+@media screen and (min-width: 500px) {
+    .toolbar {
+        height:18px;
+    }
+    .language-bar {
+        float: left;
+    }
+    .theme-bar {
+        float: right;
+    }
+}
