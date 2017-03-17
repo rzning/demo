@@ -1,0 +1,43 @@
+body {
+    padding: 0px; margin: 0px;
+}
+#main-container {
+    position: absolute;
+    width: 100%; height: 100%;
+    /*width: 600px; height: 400px;*/
+    background-color: cadetblue;
+}
+
+#editor {
+    float: left;
+    width:50%; height: 100%;
+    background-color: #eec;
+}
+
+#export {
+    float: left;
+    width: 50%; height: 100%;
+    background-color: #ccf;
+}
+
+
+#run {
+    position: absolute;
+    top: 0px;
+    left: 50%;
+    width:10px; height: 100%;
+
+    /*z-index: 90;*/
+    background-color: red;
+    opacity: 0.4;
+    cursor: pointer;
+}
+
+
+.CodeMirror {
+    /*position: absolute;*/
+    width: 100%;
+    height: 100%;
+    font-family: Consolas, 'Courier New', monospace;
+    font-size: 21px;
+}

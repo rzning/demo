@@ -1,0 +1,23 @@
+---
+layout: demo
+title: sass.js demo
+cdn_styles:
+  - https://cdn.bootcss.com/codemirror/5.24.2/codemirror.min.css
+cdn_script:
+  - https://cdn.bootcss.com/codemirror/5.24.2/codemirror.min.js
+  - https://cdn.bootcss.com/codemirror/5.24.0/mode/css/css.min.js
+  - https://cdn.bootcss.com/sass.js/0.10.3/sass.worker.min.js
+local_styles:
+  - main.css
+local_script:
+  - main.js
+---
+  <div id="main-container">
+    <div id="editor">
+      <textarea id="sasscode"></textarea>
+    </div>
+    <div id="export">
+      <textarea id="csscode"></textarea>
+    </div>
+    <div id="run"></div>
+  </div>
