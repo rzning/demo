@@ -1,0 +1,26 @@
+---
+layout: demo
+title: babel demo
+cdn_styles:
+  - https://cdn.bootcss.com/codemirror/5.24.2/codemirror.min.css
+cdn_script:
+  - https://cdn.bootcss.com/codemirror/5.24.2/codemirror.min.js
+  - https://cdn.bootcss.com/babel-polyfill/7.0.0-alpha.1/polyfill.min.js
+  - https://cdn.bootcss.com/codemirror/5.24.2/mode/javascript/javascript.min.js
+local_styles:
+  - main.css
+local_script:
+  - main.js
+---
+  <header class="page-header">
+      <a href="https://github.com/babel/babel">Babel</a>
+      <span>demo</span>
+  </header>
+  <div id="main-container">
+    <div class="editor-container" id="editor">
+      <textarea id="babelcode"></textarea>
+    </div>
+    <div class="editor-container" id="export">
+      <textarea id="jscode"></textarea>
+    </div>
+  </div>
