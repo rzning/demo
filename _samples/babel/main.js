@@ -2,7 +2,7 @@ window.addEventListener('load', function() {
     var inputNode = document.getElementById('babelcode');
     var outputNode = document.getElementById('jscode');
     var srcEditor = CodeMirror.fromTextArea(inputNode, {
-        mode: 'text/babel',
+        mode: 'text/jsx',
         lineNumbers: true,
         indentUnit: 4,
         matchBrackets: true
@@ -16,9 +16,12 @@ window.addEventListener('load', function() {
     resEditor.setValue('/* babel demo */');
 
     srcEditor.on('change',function() {
-        var str = sassEditor.getValue();
-        var res = '';
-        resEditor.setValue(res);
+        var str = srcEditor.getValue();
+        var res = Babel.transform(str, {
+            presets: ['es2015','es2016','react'],
+            babelrc: false
+        });
+        resEditor.setValue(res.code);
     });
 
 }, false);

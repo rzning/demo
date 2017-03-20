@@ -5,18 +5,21 @@ cdn_styles:
   - https://cdn.bootcss.com/codemirror/5.24.2/codemirror.min.css
 cdn_script:
   - https://cdn.bootcss.com/codemirror/5.24.2/codemirror.min.js
-  - https://cdn.bootcss.com/babel-polyfill/7.0.0-alpha.1/polyfill.min.js
   - https://cdn.bootcss.com/codemirror/5.24.2/mode/javascript/javascript.min.js
+  - https://cdn.bootcss.com/codemirror/5.24.2/mode/jsx/jsx.min.js
+  # - http://codemirror.net/mode/jsx/jsx.js
+  # - https://cdn.bootcss.com/babel-polyfill/7.0.0-alpha.1/polyfill.min.js
+  - https://cdn.bootcss.com/babel-standalone/6.23.1/babel.min.js
 local_styles:
   - main.css
 local_script:
   - main.js
 ---
   <header class="page-header">
-      <a href="https://github.com/babel/babel">Babel</a>
+      <a class="navbar-logo" href="https://github.com/babel/babel">Babel</a>
       <span>demo</span>
   </header>
-  <div id="main-container">
+  <div class="main-container">
     <div class="editor-container" id="editor">
       <textarea id="babelcode"></textarea>
     </div>

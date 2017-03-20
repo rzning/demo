@@ -1,5 +1,10 @@
 body {
     margin: 0px; padding: 0px;
+    width: 100vw; height: 100vh;
+}
+
+a {
+    text-decoration: none;
 }
 
 .page-header {
@@ -7,6 +12,11 @@ body {
     height: 28px;
     font-size: 24px;
     background-color: #9cf;
+}
+
+.page-header .navbar-logo {
+    background: url(https://babeljs.io/images/logo.svg) no-repeat center;
+    color: transparent;
 }
 
 .main-container {
