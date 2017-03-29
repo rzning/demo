@@ -3,11 +3,12 @@ require.config({
 });
 
 define([
-    'Background'
-], function(Background) {
+    'Background', 'Bricks'
+], function(Background, Bricks) {
     return function() {
 
         var background = new Background();
+        var bricks = new Bricks;
 
         var ctx = null;
 
@@ -21,9 +22,11 @@ define([
             },
             init: function(opts) {
                 background.init(opts);
+                bricks.init(opts);
             },
             render: function() {
                 background.render();
+                bricks.render();
             }
         };
     };
