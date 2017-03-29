@@ -23,7 +23,7 @@ define([
                 background.init(opts);
             },
             render: function() {
-                background.render(ctx);
+                background.render();
             }
         };
     };
