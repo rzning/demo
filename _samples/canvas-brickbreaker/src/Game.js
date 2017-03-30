@@ -3,12 +3,13 @@ require.config({
 });
 
 define([
-    'Background', 'Bricks'
-], function(Background, Bricks) {
+    'Background', 'Bricks', 'Ball'
+], function(Background, Bricks, Ball) {
     return function() {
 
         var background = new Background();
-        var bricks = new Bricks;
+        var bricks = new Bricks();
+        var ball = new Ball();
 
         var ctx = null;
 
@@ -23,10 +24,12 @@ define([
             init: function(opts) {
                 background.init(opts);
                 bricks.init(opts);
+                ball.init(opts);
             },
             render: function() {
                 background.render();
                 bricks.render();
+                ball.render();
             }
         };
     };
