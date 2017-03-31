@@ -11,6 +11,9 @@ define([
         var bricks = new Bricks();
         var ball = new Ball();
         var slider = new Slider();
+        var components = [
+            background, bricks, ball, slider
+        ];
 
         var ctx = null;
 
@@ -23,16 +26,22 @@ define([
                 this.render();
             },
             init: function(opts) {
-                background.init(opts);
-                bricks.init(opts);
-                ball.init(opts);
-                slider.init(opts);
+                // background.init(opts);
+                // bricks.init(opts);
+                // ball.init(opts);
+                // slider.init(opts);
+                components.forEach(function(comp) {
+                    comp.init(opts);
+                });
             },
             render: function() {
-                background.render();
-                bricks.render();
-                ball.render();
-                slider.render();
+                // background.render();
+                // bricks.render();
+                // ball.render();
+                // slider.render();
+                components.forEach(function(comp) {
+                    comp.render();
+                });
             }
         };
     };
