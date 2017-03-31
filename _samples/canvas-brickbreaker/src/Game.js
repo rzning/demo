@@ -3,13 +3,14 @@ require.config({
 });
 
 define([
-    'Background', 'Bricks', 'Ball'
-], function(Background, Bricks, Ball) {
+    'Background', 'Bricks', 'Ball', 'Slider'
+], function(Background, Bricks, Ball, Slider) {
     return function() {
 
         var background = new Background();
         var bricks = new Bricks();
         var ball = new Ball();
+        var slider = new Slider();
 
         var ctx = null;
 
@@ -25,11 +26,13 @@ define([
                 background.init(opts);
                 bricks.init(opts);
                 ball.init(opts);
+                slider.init(opts);
             },
             render: function() {
                 background.render();
                 bricks.render();
                 ball.render();
+                slider.render();
             }
         };
     };
