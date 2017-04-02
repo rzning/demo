@@ -14,11 +14,20 @@ define(function() {
         /** 滑块移动速度 */
         var speed = 4;
 
+        /** 游戏全局数据对象 */
+        var G = null;
+        /** 画布上下文 */
         var ctx = null;
 
         return {
             init: function(opts) {
+                G = opts;
                 ctx = opts.context;
+            },
+            move: function() {
+                if(x>a && x<G.width-a) {
+                    x += speed;
+                }
             },
             /**
              *          8           1           2

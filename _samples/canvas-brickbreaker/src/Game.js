@@ -3,8 +3,8 @@ require.config({
 });
 
 define([
-    'Background', 'Bricks', 'Ball', 'Slider'
-], function(Background, Bricks, Ball, Slider) {
+    'Background', 'Bricks', 'Ball', 'Slider', 'Control'
+], function(Background, Bricks, Ball, Slider, Control) {
     return function() {
 
         var background = new Background();
@@ -14,6 +14,7 @@ define([
         var components = [
             background, bricks, ball, slider
         ];
+        var control = new Control();
 
         var ctx = null;
 
@@ -33,6 +34,7 @@ define([
                 components.forEach(function(comp) {
                     comp.init(opts);
                 });
+                control.init();
             },
             render: function() {
                 // background.render();
