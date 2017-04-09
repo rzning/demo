@@ -22,9 +22,9 @@
   <div class="container-fluid">
     <div class="row">
       <div class="col-sm-6">
-        <div class="panel panel-default">
+        <div class="panel panel-info">
           <div class="panel-heading">
-            <button class="btn btn-default">Panel 1</button>
+            <h3 class="panel-title">Panel 1</h3>
           </div>
           <div class="panel-body">
             <p>Panel 1 content</p>
@@ -32,9 +32,9 @@
         </div>
       </div>
       <div class="col-sm-6">
-        <div class="panel panel-default">
+        <div class="panel panel-success">
           <div class="panel-heading">
-            <button class="btn btn-default">Panel 2</button>
+            <h3 class="panel-title">Panel 2</h3>
           </div>
           <div class="panel-body">
             <p>Panel 2 content</p>
@@ -43,6 +43,35 @@
       </div>
     </div>
   </div>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-2">
+        <ul class="list-group">
+          <li class="list-group-item">HTML</li>
+          <li class="list-group-item">CSS</li>
+          <li class="list-group-item">JavaScript</li>
+        </ul>
+      </div>
+      <div class="col-sm-10">
+        <div class="panel panel-primary">
+          <ul class="nav nav-tabs">
+            <li class="active"><a href="#editor_html" data-toggle="tab">HTML</a></li>
+            <li><a href="#editor_css" data-toggle="tab">CSS</a></li>
+            <li><a href="#editor_javascript" data-toggle="tab">JavaScript</a></li>
+          </ul>
+          <div class="panel-body">
+            <div class="tab-content">
+              <div class="tab-pane active" id="editor_html">HTML content</div>
+              <div class="tab-pane" id="editor_css">CSS content</div>
+              <div class="tab-pane" id="editor_javascript">JavaScript content</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 {{ content }}
+  <script src="https://cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+  <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </body>
 </html>
