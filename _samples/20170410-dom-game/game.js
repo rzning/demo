@@ -72,7 +72,7 @@ window.addEventListener('load', ()=>{
             /**
              * 判断关卡是否结束
              */
-            isFinished: ()=>{
+            isFinished: function() {
                 return this.status != null && this.finishDelay < 0;
             }
         };
@@ -84,6 +84,12 @@ window.addEventListener('load', ()=>{
     function Vector(x, y) {
         var x = x, y= y;
         return {
+            get x() {
+                return x;
+            },
+            get y() {
+                return y;
+            },
             plus: function(other) {
                 return new Vector(x+other.x, y+other.y);
             },
@@ -173,7 +179,7 @@ window.addEventListener('load', ()=>{
             wrap: wrap,
             actors: null,
             drawBackground: drawBackground,
-            drawActors : ()=>{
+            drawActors : function() {
                 var wrap = elemc('div');
                 this.level.actors.forEach((actor)=>{
                     var item = wrap.appendChild(elemc('div', 'actor ' + actor.type));
@@ -187,10 +193,24 @@ window.addEventListener('load', ()=>{
             /**
              * 滚动视口，保持玩家在视口中央位置
              */
-            scrollView: ()=>{
-                //
+            scrollView: function() {
+                var width = this.wrap.clientWidth;
+                var height = this.wrap.chientHeight;
+                var margin = width/3;
+                
+                // 观察点
+                var left = this.wrap.scrollLeft,
+                    right = left + width,
+                    top = this.wrap.scrollTop,
+                    bottom = top + height;
+
+                var player = this.level.player;
+                var center = player.pos.plus(player.size.scale(0.5)).scale(pixel);
+
+                // todo: 滚动视口
+
             },
-            update: ()=>{
+            update: function() {
                 if(this.actors) {
                     this.wrap.removeChild(this.actors);
                 }
@@ -207,6 +227,7 @@ window.addEventListener('load', ()=>{
      */
     var simpleLevel = new Level(simpleLevelPlan);
     var view = new DOMRender(simpleLevel, document.getElementById('container'));
+    view.update();
     console.log('<'+simpleLevel.width+','+simpleLevel.height+'>');
 
 }, false);
