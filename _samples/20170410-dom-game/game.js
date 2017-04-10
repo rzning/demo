@@ -157,7 +157,7 @@ window.addEventListener('load', ()=>{
             var table = elemc('table', 'background');
             table.style.width = level.width * pixel + 'px';
             level.grid.forEach((line)=>{
-                var row = table.appendChild(elemc('tr'));
+                var row = table.appendChild(elemc('tr', 'row'));
                 row.style.height = pixel + 'px';
                 line.forEach((item)=>{
                     row.appendChild(elemc('td', item));
@@ -171,7 +171,33 @@ window.addEventListener('load', ()=>{
         return {
             level: level,
             wrap: wrap,
-            drawBackground: drawBackground
+            actors: null,
+            drawBackground: drawBackground,
+            drawActors : ()=>{
+                var wrap = elemc('div');
+                this.level.actors.forEach((actor)=>{
+                    var item = wrap.appendChild(elemc('div', 'actor ' + actor.type));
+                    item.style.width = actor.size.x * pixel + 'px';
+                    item.style.height = actor.size.y * pixel + 'px';
+                    item.style.left = actor.pos.x * pixel + 'px';
+                    item.style.top = actor.pos.y * pixel + 'px';
+                });
+                return wrap;
+            },
+            /**
+             * 滚动视口，保持玩家在视口中央位置
+             */
+            scrollView: ()=>{
+                //
+            },
+            update: ()=>{
+                if(this.actors) {
+                    this.wrap.removeChild(this.actors);
+                }
+                this.actors = this.wrap.appendChild(this.drawActors());
+                this.wrap.className = 'game ' + (this.level.status || '');
+                this.scrollView();
+            }
         };
     }
 
@@ -180,6 +206,7 @@ window.addEventListener('load', ()=>{
      * 简单关卡示例
      */
     var simpleLevel = new Level(simpleLevelPlan);
+    var view = new DOMRender(simpleLevel, document.getElementById('container'));
     console.log('<'+simpleLevel.width+','+simpleLevel.height+'>');
 
 }, false);

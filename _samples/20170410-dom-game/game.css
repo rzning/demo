@@ -2,3 +2,24 @@ html {
     color: white;
     background-color: #124;
 }
+
+.game {
+    position: relative;
+    max-width: 600px;
+    max-height: 450px;
+    overflow: hidden;
+}
+
+.background {
+    background-color: rgb(52, 166, 251);
+    border-spacing: 0;
+}
+
+.row { padding: 0; }
+
+.actor { position: absolute; }
+
+.lava { background-color: rgb(255, 100, 100); }
+.wall { background-color: rgb(30, 60, 70); }
+.coin { background-color: rgb(241, 229, 9); }
+.player { background-color: rgb(10, 180, 100); }
