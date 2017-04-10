@@ -136,6 +136,47 @@ window.addEventListener('load', ()=>{
     }
 
     /**
+     * 工具函数 - 创建 DOM 节点
+     * 
+     * 创建指定 class 属性的 DOM 元素对象
+     */
+    function elemc(name, cls) {
+         var el = document.createElement(name);
+         if(cls) el.className = cls;
+         return el;
+    }
+
+    /**
+     * 渲染器 - DOM 渲染类
+     */
+    function DOMRender(level, root) {
+        var wrap = root.appendChild(elemc('div', 'game'));
+        var pixel = 20;
+
+        function drawBackground() {
+            var table = elemc('table', 'background');
+            table.style.width = level.width * pixel + 'px';
+            level.grid.forEach((line)=>{
+                var row = table.appendChild(elemc('tr'));
+                row.style.height = pixel + 'px';
+                line.forEach((item)=>{
+                    row.appendChild(elemc('td', item));
+                })
+            });
+            return table;
+        }
+
+        wrap.appendChild(drawBackground());
+
+        return {
+            level: level,
+            wrap: wrap,
+            drawBackground: drawBackground
+        };
+    }
+
+
+    /**
      * 简单关卡示例
      */
     var simpleLevel = new Level(simpleLevelPlan);
