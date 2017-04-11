@@ -2,6 +2,21 @@ window.addEventListener('load', ()=>{
 
     /**
      * 简单关卡平面图
+     * 
+     * ```
+     * -------------------- 静态元素
+     *  ` `  空格表示空气
+     *  `x`  墙壁
+     *  `!`  静止的熔岩
+     * -------------------- 动态元素
+     *  `o`  硬币
+     *  `@`  玩家起始位置
+     *  `=`  水平移动的熔岩
+     *  `|`  垂直移动的熔岩
+     *  `v`  坠落的熔岩块
+     * ```
+     * 
+     * 静态元素作为游戏背景，而动态元素浮动在背景之上。
      */
     var simpleLevelPlan = [
         '                    ',
@@ -61,17 +76,21 @@ window.addEventListener('load', ()=>{
         })[0];
 
         return {
+            /** 地图宽度 */
             width: width,
+            /** 地图高度 */
             height: height,
+            /** 地图背景网格 */
             grid: grid,
+            /** 动态元素集合 */
             actors: actors,
+            /** 玩家元素 */
             player: player,
+            /** 关卡状态 */
             status: null,
             finishDelay: null,
 
-            /**
-             * 判断关卡是否结束
-             */
+            /** 判断关卡是否结束 */
             isFinished: function() {
                 return this.status != null && this.finishDelay < 0;
             }
