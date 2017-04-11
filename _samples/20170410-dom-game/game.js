@@ -100,8 +100,8 @@ window.addEventListener('load', ()=>{
     /**
      * 矢量类：用于保存活动元素的位置和尺寸
      */
-    function Vector(x, y) {
-        var x = x, y= y;
+    function Vector(cx, cy) {
+        var x = cx, y= cy;
         return {
             get x() {
                 return x;
@@ -109,9 +109,11 @@ window.addEventListener('load', ()=>{
             get y() {
                 return y;
             },
+            /** 叠加 */
             plus: function(other) {
                 return new Vector(x+other.x, y+other.y);
             },
+            /** 缩放 */
             scale: function(factor) {
                 return new Vector(x*factor, y*factor);
             }
@@ -123,9 +125,13 @@ window.addEventListener('load', ()=>{
      */
     function Player(pos) {
         return {
+            /** 类型 */
             type: 'player',
+            /** 位置 */
             pos: pos.plus(new Vector(0, -0.5)),
+            /** 大小 */
             size: new Vector(0.8, 1.5),
+            /** 速度 */
             speed: new Vector(0, 0)
         }
     }
@@ -140,9 +146,13 @@ window.addEventListener('load', ()=>{
             case 'V': speed = new Vector(0, 3); break;
         }
         return {
+            /** 类型 */
             type: 'lava',
+            /** 位置 */
             pos: pos,
+            /** 大小 */
             size: new Vector(1, 1),
+            /** 速度 */
             speed: speed
         }
     }
@@ -152,10 +162,15 @@ window.addEventListener('load', ()=>{
     function Coin(pos) {
         var pos = pos.plus(new Vector(0.2, 0.1));
         return {
+            /** 类型 */
             type: 'coin',
+            /** 基本位置 */
             basePos: pos,
+            /** 位置 */
             pos: pos,
+            /** 大小 */
             size: new Vector(0.6, 0.6),
+            /** 跳动幅度 */
             wobble: Math.random()*Math.PI*2
         }
     }
@@ -173,6 +188,8 @@ window.addEventListener('load', ()=>{
 
     /**
      * 渲染器 - DOM 渲染类
+     * @param {Object} level 游戏关卡对象
+     * @param {HTMLElement} root 渲染父容器 DOM 节点对象
      */
     function DOMRender(level, root) {
         var wrap = root.appendChild(elemc('div', 'game'));
@@ -194,10 +211,17 @@ window.addEventListener('load', ()=>{
         wrap.appendChild(drawBackground());
 
         return {
+            /** 关卡对象 */
             level: level,
+            /** 游戏 DOM 根节点对象 */
             wrap: wrap,
+            /** 动态元素 DOM 根节点对象 */
             actors: null,
+            /** 绘制背景 */
             drawBackground: drawBackground,
+            /**
+             * 绘制动态元素
+             */
             drawActors : function() {
                 var wrap = elemc('div');
                 this.level.actors.forEach((actor)=>{
@@ -229,6 +253,9 @@ window.addEventListener('load', ()=>{
                 // todo: 滚动视口
 
             },
+            /**
+             * 更新视图
+             */
             update: function() {
                 if(this.actors) {
                     this.wrap.removeChild(this.actors);
