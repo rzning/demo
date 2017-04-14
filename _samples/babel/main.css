@@ -11,12 +11,16 @@ a {
     padding:6px;
     height: 28px;
     font-size: 24px;
-    background-color: #9cf;
+    background-color: #f5da55;
 }
 
 .page-header .navbar-logo {
     background: url(https://babeljs.io/images/logo.svg) no-repeat center;
     color: transparent;
+}
+
+textarea {
+    display: none;
 }
 
 .main-container {
