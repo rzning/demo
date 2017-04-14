@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>{{ page.title }}</title>
+  <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body>
+  <!-- header -->
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+      <div class="navbar-header logo">
+        <a class="navbar-brand" href="http://rzning.com">Rzning</a>
+      </div>
+      <ul class="nav navbar-nav">
+        <li><a>{{ page.title }}</a></li>
+      </ul>
+    </div>
+  </nav>
+  <div style="height:60px;"></div>
+  <!-- main -->
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-3 col-md-2">
+        {{ content }}
+      </div>
+      <div class="col-sm-9 col-md-10">
+        <ul class="nav nav-tabs">
+          <li class="active"><a href="#des" data-toggle="tab">Description</a></li>
+          <li><a href="#src" data-toggle="tab">Source</a></li>
+          <li><a href="#res" data-toggle="tab">Result</a></li>
+        </ul>
+        <div class="panel-body">
+          <div class="tab-content">
+            <div class="tab-pane active" id="des">des content</div>
+            <div class="tab-pane" id="src">src content</div>
+            <div class="tab-pane" id="res">res content</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- footer -->
+  <script src="https://cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+  <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
+</html>
