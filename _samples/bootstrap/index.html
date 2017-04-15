@@ -2,12 +2,43 @@
 layout: bootstrap
 title: Bootstrap
 date: 2017-04-14 21:00:00 +0800
+toc:
+  - title: Getting Started
+    subitems:
+      - name: Introduction
+        url: path/to/introduction
+      - name: Download
+        url: path/to/download
+      - name: Contents
+        url: path/to/contents
+  - title: Layout
+    subitems:
+      - name: Layout
+  - title: Content
+    subitems:
+      - name: Content
+  - title: Components
+    subitems:
+      - name: Components
+  - title: Utilities
+    subitems:
+      - name: Utilities
 ---
 
-<ul class="list-group">
-    <li class="list-group-item">Getting Started</li>
-    <li class="list-group-item">Layout</li>
-    <li class="list-group-item">Content</li>
-    <li class="list-group-item">Components</li>
-    <li class="list-group-item">Utilities</li>
-</ul>
+<div class="panel-group" id="accordion">
+  {% for entry in page.toc %}
+    <div class="panel panel-info">
+        <button class="btn btn-info btn-block" data-toggle="collapse" data-parent="#accordion"
+            data-target="#list_{{ entry.title | replace: ' ','_' }}">
+            {{ entry.title }}
+        </button>
+        <div class="panel-collapse collapse" id="list_{{ entry.title | replace: ' ','_' }}">
+            <ul class="list-group">
+              {% for item in entry.subitems %}
+                <li class="list-group-item">{{ item.name }}</li>
+              {% endfor %}
+            </ul>
+        </div>
+    </div>
+  {% endfor %}
+</div>
