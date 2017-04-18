@@ -18,8 +18,10 @@ toc:
     subitems:
       - name: Content
   - title: Components
+    url: components
     subitems:
-      - name: Components
+      - name: Alerts
+        url: alerts
   - title: Utilities
     subitems:
       - name: Utilities
@@ -35,7 +37,7 @@ toc:
         <div class="panel-collapse collapse" id="list_{{ entry.title | replace: ' ','_' }}">
             <ul class="list-group">
               {% for item in entry.subitems %}
-                <li class="list-group-item">{{ item.name }}</li>
+                <li class="list-group-item" role="nav-item" data-url="{{ entry.url }}/{{ item.url }}/">{{ item.name }}</li>
               {% endfor %}
             </ul>
         </div>
