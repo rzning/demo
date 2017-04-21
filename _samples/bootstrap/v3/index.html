@@ -1,25 +1,22 @@
 ---
-layout: bootstrap.v4
-title: Bootstrap v4
+layout: bootstrap
+title: Bootstrap v3
 date: 2017-04-21 22:00:00 +0800
 ---
 
-<div id="accordion">
+<div class="panel-group" id="accordion">
   {% for entry in site.data.samples.bootstrap.toc %}
-    <div class="card">
+    <div class="panel panel-info">
         <button class="btn btn-info btn-block" data-toggle="collapse" data-parent="#accordion"
             data-target="#list_{{ entry.title | replace: ' ','_' }}">
             {{ entry.title }}
         </button>
-        <div class="collapse" id="list_{{ entry.title | replace: ' ','_' }}">
-            <div class="list-group">
+        <div class="panel-collapse collapse" id="list_{{ entry.title | replace: ' ','_' }}">
+            <ul class="list-group">
               {% for item in entry.subitems %}
-                <a class="list-group-item list-group-item-action"
-                   role="nav-item" data-url="{{ entry.url }}/{{ item.url }}/">
-                    {{ item.name }}
-                </a>
+                <li class="list-group-item" role="nav-item" data-url="{{ entry.url }}/{{ item.url }}/">{{ item.name }}</li>
               {% endfor %}
-            </div>
+            </ul>
         </div>
     </div>
   {% endfor %}

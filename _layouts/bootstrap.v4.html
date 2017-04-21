@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>{{ page.title }}</title>
+  <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.bootcss.com/codemirror/5.25.0/codemirror.min.css">
+</head>
+<body>
+  <!-- header -->
+  <nav class="navbar navbar-inverse bg-inverse navbar-toggleable-md">
+    <button class="navbar-toggler navbar-toggler-right" data-toggle="collapse" data-target="#pageHeaderNavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" href="http://rzning.com">Rzning</a>
+    <div class="collapse navbar-collapse" id="pageHeaderNavbar">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link">{{ page.title }}</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <!-- main -->
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-3 col-lg-2">
+        {{ content }}
+      </div>
+      <div class="col-md-9 col-lg-10">
+        <ul class="nav nav-tabs">
+          <li class="nav-item">
+            <a class="nav-link active" href="#des" data-toggle="tab">Description</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#src" data-toggle="tab">Source</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#res" data-toggle="tab">Result</a>
+          </li>
+        </ul>
+        <div class="tab-content">
+          <div class="tab-pane active" id="des">des content</div>
+          <div class="tab-pane" id="src">src content</div>
+          <div class="tab-pane" id="res">res content</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- footer -->
+  <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdn.bootcss.com/tether/1.4.0/js/tether.min.js"></script>
+  <script src="https://cdn.bootcss.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
+  <script src="https://cdn.bootcss.com/marked/0.3.6/marked.min.js"></script>
+  <script src="https://cdn.bootcss.com/codemirror/5.25.0/codemirror.min.js"></script>
+  <script src="https://cdn.bootcss.com/codemirror/5.25.0/mode/htmlmixed/htmlmixed.min.js"></script>
+  <script src="/assets/script/layouts/bootstrap.js"></script>
+</body>
+</html>
