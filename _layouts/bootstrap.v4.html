@@ -24,7 +24,7 @@
     </div>
   </nav>
   <!-- main -->
-  <div class="container-fluid">
+  <div class="container-fluid mt-2">
     <div class="row">
       <div class="col-md-3 col-lg-2">
         {{ content }}
@@ -41,9 +41,11 @@
             <a class="nav-link" href="#res" data-toggle="tab">Result</a>
           </li>
         </ul>
-        <div class="tab-content">
+        <div class="tab-content card border-top-0 p-3">
           <div class="tab-pane active" id="des">des content</div>
-          <div class="tab-pane" id="src">src content</div>
+          <div class="tab-pane" id="src">
+            <textarea id="htmlEditor"></textarea>
+          </div>
           <div class="tab-pane" id="res">res content</div>
         </div>
       </div>
@@ -55,6 +57,9 @@
   <script src="https://cdn.bootcss.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
   <script src="https://cdn.bootcss.com/marked/0.3.6/marked.min.js"></script>
   <script src="https://cdn.bootcss.com/codemirror/5.25.0/codemirror.min.js"></script>
+  <script src="https://cdn.bootcss.com/codemirror/5.25.0/mode/xml/xml.min.js"></script>
+  <script src="https://cdn.bootcss.com/codemirror/5.25.0/mode/css/css.min.js"></script>
+  <script src="https://cdn.bootcss.com/codemirror/5.25.0/mode/javascript/javascript.min.js"></script>
   <script src="https://cdn.bootcss.com/codemirror/5.25.0/mode/htmlmixed/htmlmixed.min.js"></script>
   <script src="/assets/script/layouts/bootstrap.js"></script>
 </body>

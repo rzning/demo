@@ -1,5 +1,17 @@
 window.addEventListener('load', function() {
 
+    var editor = CodeMirror.fromTextArea($('#htmlEditor')[0], {
+        mode: 'text/html',
+        lineNumbers: true,
+        indentUnit: 4,
+        matchBrackets: true
+    });
+
+    editor.on('change', function() {
+        var code = editor.getValue();
+        $('#res').html(code);
+    });
+
     var url_prefix = 'v4/';
 
     function getContent(url, callback) {
@@ -19,7 +31,8 @@ window.addEventListener('load', function() {
 
     function getExample(url) {
         getContent(url, function(data) {
-            $('#src').html(data);
+            // $('#src').html(data);
+            editor.setValue(data);
         });
     }
 
