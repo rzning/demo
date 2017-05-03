@@ -33,6 +33,7 @@
   subitems:
     - name: Alerts
       url: alerts
+      code: ex1.html
     - name: Badge
       url: badges
     - name: Breadcrumb

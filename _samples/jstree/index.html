@@ -1,0 +1,27 @@
+---
+layout: demo
+title: jsTree demo
+date: 2017-05-03 22:20:00 +0800
+cdn_styles:
+  # - https://cdn.bootcss.com/jstree/3.3.4/themes/default-dark/style.min.css
+  - https://cdn.bootcss.com/jstree/3.3.4/themes/default/style.min.css
+cdn_script:
+  - https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js
+  - https://cdn.bootcss.com/jstree/3.3.4/jstree.min.js
+local_script:
+  - main.js
+---
+
+<div id="jstree">
+  <ul>
+    <li>Root node 1
+      <ul>
+        <li id="child_node_1">Child node 1</li>
+        <li>Child node 2</li>
+      </ul>
+    </li>
+    <li>Root node 2</li>
+  </ul>
+</div>
+
+<button>demo button</button>
